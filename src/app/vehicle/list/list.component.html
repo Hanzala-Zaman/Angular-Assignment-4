@@ -1,0 +1,27 @@
+
+<button1 routerLink="category">Show Categories</button1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Fuel Type</th>
+        <th>Color</th>
+        <th>Model</th>
+        <th>Show Category</th>
+        <th>Show Details</th>
+        
+    </tr>
+    <tbody *ngFor="let temp of showList.vehicle, let i = index">
+        <tr>      
+             <td>{{temp.name}}</td>
+             <td>{{temp.category}}</td>
+             <td>{{temp.fuelType}}</td>
+             <td>{{temp.color}}</td>
+             <td>{{temp.model}}</td>
+             <td><button (click)="getcatList(i)" [routerLink]="['/category',temp.categoryId]">Category</button></td>
+             <td><button (click)="getDetails(i)" [routerLink]="['/details',temp.id]">Details</button></td>
+            
+         </tr>
+        
+    </tbody>
+</table>
